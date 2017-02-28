@@ -1,10 +1,13 @@
 class LinksController < ApplicationController
   def index
+    # binding.pry
+    @hot_links = Link.hot
     if current_user
       @links = current_user.links
-      @hot_links = Link.hot
+      # @hot_links = Link.hot
     else
-      @hot_links = Link.hot
+      @links = []
+      # @hot_links = Link.hot
     end
   end
 
