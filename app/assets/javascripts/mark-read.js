@@ -67,7 +67,7 @@ function newLinkForHotReads(url) {
   $.ajax({
     method: 'POST',
     dataType: 'json',
-    url: 'http://localhost:3001/api/v1/links',
+    url: 'https://hotreadz.herokuapp.com/api/v1/links',
     data: { link: { url: url } },
   });
 }
