@@ -17,8 +17,8 @@
   <p class="link_read">
     <%= "#{link.read}" %>
   </p>
-    <button class="mark-read">Mark as Read</button>
-    <%= link_to "Edit", edit_link_path(link) %>
+  <%= link_to "Edit", edit_link_path(link) %>
+  <button class="mark-read" data-id=<%= "#{link.id}" %> >Mark as Read</button>
 </div>
 <% end %>
 
