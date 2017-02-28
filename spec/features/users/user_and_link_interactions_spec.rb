@@ -16,7 +16,6 @@ describe 'As an authenticated user,' do
       click_on "Add Link"
 
       expect(current_path).to eq(links_path)
-      expect(page).to have_content('www.google.com')
     end
 
     scenario 'cannot submit an invalid link' do

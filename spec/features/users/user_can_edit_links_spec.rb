@@ -13,8 +13,8 @@ describe "As a logged in user" do
 
       expect(page).to have_content("Google")
       expect(page).to have_content("http://www.google.com")
-      expect(page).to have_link("Edit This Link", href: edit_link_path(link))
-      click_on ("Edit This Link")
+      expect(page).to have_link("Edit", href: edit_link_path(link))
+      click_on ("Edit")
 
       expect(current_path).to eq(edit_link_path(link))
 
@@ -23,11 +23,6 @@ describe "As a logged in user" do
       click_on "Update Link"
 
       expect(current_path).to eq(links_path)
-      # expect(page).to have_content("Turing")
-      # expect(page).to_not have_content("Google")
-      # expect(page).to have_content("http://turing.io")
-      # expect(page).to_not have_content("http://www.google.com")
-
     end
   end
 end

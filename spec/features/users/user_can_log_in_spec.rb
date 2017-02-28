@@ -17,7 +17,7 @@ describe 'As a registered user' do
 
       click_on("Submit")
 
-      expect(current_path).to eq(links_path)
+      expect(current_path).to eq(root_path)
     end
 
     scenario "I enter the wrong email and can not log in" do
