@@ -1,0 +1,40 @@
+<form id="new-link">
+  <label>URL:
+    <input id="link-url">
+  </label>
+  <label>Title:
+    <input id="link-title">
+  </label>
+  <input type="submit" value="Add Link">
+</form>
+
+<div id="links-list"></div>
+<% @links.each do |link| %>
+<div class='link' id='link-<%= "#{link.id}"%>' data-id=<%= "#{link.id}" %> >
+  <p class='link-title'><%= "#{link.title}" %></p>
+  <p class='link-url'><%= "#{link.url}" %></p>
+
+  <p class="link_read">
+    <%= "#{link.read}" %>
+  </p>
+  <%= link_to "Edit", edit_link_path(link) %>
+  <button class="mark-read" data-id=<%= "#{link.id}" %> >Mark as Read</button>
+</div>
+<% end %>
+
+
+<h2>Hot Reads!</h2>
+<ol id="hot-reads">
+  <% @hot_links.each do |read| %>
+  <% if read == @hot_links.first %>
+  <li class='hot-read'>
+    <a href="<%= read.url %>"><%= read.url %> </a> Top Link
+  </li>
+  <% else %>
+  <li class='hot-read'>
+    <a href="<%= read.url %>"><%= read.url %> </a> Hot
+    </li>
+  <% end %>
+  <% end %>
+</ol>
+<!-- <img src="https://m.popkey.co/4c7272/QL6mJ.gif"> -->

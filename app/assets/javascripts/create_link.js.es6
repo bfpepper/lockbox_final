@@ -18,7 +18,7 @@ function createLink (event){
    .then( renderLink )
    .fail( displayFailure )
  }
- 
+
 
 function getLinkData() {
  return {
@@ -28,8 +28,7 @@ function getLinkData() {
 }
 
 function renderLink(link){
-  $("#links-list").append( linkHTML(link) )
-  // clearLink();
+  $("#links-list").append( linkHTML(link) );
 }
 
 function linkHTML(link) {
@@ -41,10 +40,8 @@ function linkHTML(link) {
               <p class="link_read">
                 ${ link.read }
               </p>
-              <p class="link_buttons">
-                <button class="mark-read">Mark as Read</button>
-                <button class='edit-link'>Edit</button>
-              </p>
+              <button class='edit-link'>Edit</button>
+              <button class="mark-read" data-id='${link.id}'>Mark as Read</button>
             </div>`
 }
 
