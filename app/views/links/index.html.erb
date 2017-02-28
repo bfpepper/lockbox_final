@@ -26,9 +26,15 @@
 <h2>Hot Reads!</h2>
 <ol id="hot-reads">
   <% @hot_links.each do |read| %>
+  <% if read == @hot_links.first %>
   <li class='hot-read'>
-    <a href="<%= read.url %>"><%= read.url %></a>
+    <a href="<%= read.url %>"><%= read.url %> </a> Top Link
   </li>
+  <% else %>
+  <li class='hot-read'>
+    <a href="<%= read.url %>"><%= read.url %> </a> Hot
+    </li>
+  <% end %>
   <% end %>
 </ol>
 <!-- <img src="https://m.popkey.co/4c7272/QL6mJ.gif"> -->
